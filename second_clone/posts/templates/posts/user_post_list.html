@@ -1,0 +1,26 @@
+{% extends "posts/post_base.html" %}
+
+{% block prepost %}
+<div class="col-md-4">
+	<h1>@{{ post_user.username }}</h1>
+	<p></p>
+</div>
+{% endblock %}
+
+{% block post_content %}
+
+{%if post_list.count == 0 %}
+<div class="jumbotron" style="width: 60%;font-family:italic;">
+
+	<h1 style="font-size:30px">No post please click the  create Post button to create a new post</h1>
+</div>
+{%endif%}
+<div class="container">
+<div class="col-md-8" >
+	
+	{% for post in post_list %}
+		{% include "posts/_post.html" %}
+	{% endfor %}
+</div>
+</div>
+{% endblock %}

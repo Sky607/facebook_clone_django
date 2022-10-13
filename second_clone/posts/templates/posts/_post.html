@@ -1,0 +1,38 @@
+
+<div class="container">
+		<div class="card-group">
+			<div class="card" >
+				
+				
+			  <div class="card-body" style="font-size:20px">
+				{%if post.post_image %}
+			  <img src="{{post.post_image.url}}" width="50%"class="thumbnail card-img-top" alt="...">
+			  {%endif%}
+			  
+				<p class="post-title">{{ post.message|safe }}</p>
+				<h5 class="media-heading">
+					<span class="username" ><a href="{% url 'posts:for_user' username=post.user.username %}"
+					>@{{ post.user.username }}</a></span>
+					<time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
+					{% if post.group %}
+					<span class="group-name">in <a href="#">{{ post.group.name }}</a></span>
+					{% endif %}
+				</h5>
+		
+			  </div>
+			</div>
+		</div>
+
+
+
+
+		<div class="media-footer">
+			{% if user.is_authenticated and post.user == user and not hide_delete %}
+				<a href="{% url 'posts:delete' pk=post.pk %}" title="delete" class="btn btn-simple">
+					<span class="glyphicon glyphicon-remove text-danger" aria-hidden="true"></span>
+					<span class="text-danger icon-label">Delete</span>
+				</a>
+			{% endif %}
+		</div>
+	</div>
+</div>
