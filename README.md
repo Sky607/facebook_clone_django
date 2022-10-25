@@ -22,7 +22,7 @@ By running above command in your cmd all the dependencies or required modules ar
 # Note
 This command only works when you are in the same folder where your project folder and manage.py folder you extracted
 
-# serve
+# Execution
 
 Before starting the project please follow the below steps
 - First run the migration in the cmd by using following commands
