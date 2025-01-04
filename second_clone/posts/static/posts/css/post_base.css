@@ -1,0 +1,29 @@
+.post_form{
+    margin-top: 2rem;
+    margin:10px auto;
+
+}
+.post_heading{
+    font-size:25px;
+    text-align: center;
+}
+.card-footer{
+    padding:0;
+    background-color: none;
+    border:none;
+}
+.row{
+    margin:0;
+}
+.card-group{
+    display:block
+}
+.container{
+    padding:0;
+    margin-bottom: 10px;
+}
+@media screen and (min-width:0px) {
+    .container{
+        max-width:600px
+    }
+}

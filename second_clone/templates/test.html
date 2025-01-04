@@ -2,5 +2,11 @@
 
 {% block content %}
 
-<h1>You are logged in successfully</h1>
+<h1 style='text-align:center;margin-top:10px'>You are logged in successfully</h1>
+<script>
+    setTimeout(()=>{
+        window.location.href = {% url 'posts:all'%}
+    },2000)
+</script>
+
 {% endblock %}

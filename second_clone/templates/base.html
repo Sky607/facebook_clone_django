@@ -3,46 +3,46 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>FriendsBook|Homepage</title>
+    {%block title %}<title>FriendsBook|Homepage</title>
+    {%endblock %}
     <!-- Latest compiled and minified CSS -->
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-   
-    
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
+    <link rel="icon" type="image/x-icon" href={% static "social_app/logo/logo.webp" %}>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'social_app/css/master.css'%}">
-
-
+ {% block staticfiles %}{% endblock %}
   </head>
 
 
   <body>
 
-    <nav class="navbar  mynav" role="navigation" id="navbar">
-    			<div class="container">
-            <span> <i class="glyphicon glyphicon-list icon"></i></span>
-            
-            <a class="navbar-brand mynav" id="brand" href="{% url 'posts:all'%}" >FriendsBook</a>
-
-    					<ul class="nav navbar-nav navbar-right" id="li_items">
-    						{% if user.is_authenticated %}
-                      <li><a href="{% url 'posts:all'%}" class="btn btn-simple">Post</a></li>
-                      <li><a href="{% url 'groups:all' %}" class="btn btn-simple">Groups</a></li>
-                      <li><a href="{% url 'groups:create'%}" class="btn btn-simple">Create Group</a></li>
-                      <li><a href="{% url 'posts:create'%}" class="btn btn-simple">Create Post</a></li>
-                      <li><a href="{% url 'social_app:logout' %}" class="btn btn-simple">Log out</a></li>
-                      <li id="name">UserName: {{user.username}}</li>
-                     
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark cusSticky"> <a class="navbar-brand"  data-abc="true">FaceBook</a> <button class="navbar-toggler" id="toggle" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"><i class="glyphicon glyphicon-list icon"></i></span> </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+          <ul id='name' class="navbar-nav mr-auto">
+         				{% if user.is_authenticated %}
+                      <li class="nav-item active"><a class="nav-link" href="{% url 'posts:all'%}" class="btn btn-simple">Post</a></li>
+                      <li class="nav-item active"><a class="nav-link"href="{% url 'groups:all' %}" class="btn btn-simple">Groups</a></li>
+                      <li class="nav-item active"><a class="nav-link"href="{% url 'groups:create'%}" class="btn btn-simple">Create Group</a></li>
+                      <li class="nav-item active"><a class="nav-link"href="{% url 'posts:create'%}" class="btn btn-simple">Create Post</a></li>
+          </ul>
+                      {% if user.is_authenticated %}
+                      <ul id="names" class="navbar-nav ml-auto">
+                        <li class="nav-item active" id="user-name">UserName: {{ user.username }}</li>
+                        <li class="nav-item active ml-2">
+                          <a class="nav-link logout" href="{% url 'social_app:logout' %}" class="btn btn-simple">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power icon" viewBox="0 0 16 16">
+                              <path d="M7.5 1v7h1V1z"/>
+                              <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812"/>
+                            </svg> Log out
+                          </a>
+                        </li>
+                      </ul>
+                      {% endif %}
     						{% else %}
-    						      <li ><a href="#"class="btn btn-simple list">Groups</a></li>
+    						     
     						      <li><a href="{% url 'social_app:login'%}"   class="btn btn-simple">Log in</a></li>
     						      <li><a href="{% url 'social_app:signup'%}" class="btn btn-simple">Sign up</a></li>
     						{% endif %}
@@ -53,17 +53,16 @@
 
     			</div>
     		</nav>
-        <div class="container mycontent">
+        <div class="container ">
           {% block content %}
-
+        
           {% endblock %}
-
+         
         </div>
 
 
 
 <canvas id="canvas"></canvas>
-
 
 
   

@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Thanks for visiting the page</h1>
+<h1 style="text-align:center;margin-top:10px">Thanks for visiting </h1>
 
+<script>
+    setTimeout(()=>{
+        window.location.href = {% url 'posts:all'%}
+    },2000)
+</script>
 {% endblock  %}

@@ -54,18 +54,15 @@ class PostDetail(SelectRelatedMixin, generic.DetailView):
 
 
 class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
-    #form_class = forms.PostForm
-    fields = ('message','group','post_image')
+    fields = ('message', 'group', 'post_image')
     model = models.Post
 
-    
     def form_valid(self, form):
         self.object = form.save(commit=False)
-        self.object.user = self.request.user
-        self.object.save()
-        
+        self.object.user = self.request.user  # Assign the currently logged-in user
+        self.object.save()  # Save the object, including the uploaded file
         return super().form_valid(form)
-
+    
 
 class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
     model = models.Post

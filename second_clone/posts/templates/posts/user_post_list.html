@@ -15,12 +15,12 @@
 	<h1 style="font-size:30px">No post please click the  create Post button to create a new post</h1>
 </div>
 {%endif%}
-<div class="container">
-<div class="col-md-8" >
-	
+{% if user.is_authenticated %}
 	{% for post in post_list %}
+	<div class="col-md-12" >
 		{% include "posts/_post.html" %}
+	</div>
 	{% endfor %}
-</div>
-</div>
+	{% endif %}
+
 {% endblock %}
