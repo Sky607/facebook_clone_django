@@ -3,7 +3,7 @@ body{
     margin:0px;
 }
 .btn{
-    color:white
+    color:white !important;
 }
 .cusSticky {
     position:relative;
@@ -32,12 +32,13 @@ body{
         font-size:18px;
         font-weight: bold;
     }
-    .btn{
-        color:white;
+    #name li > a{
+        color:white; 
         font-size:20px;
         font-family:sans-serif;
         
     }
+
     .navbar-brand{
         font-size:20px;
         box-shadow:6px 6px 10px 0px blue
