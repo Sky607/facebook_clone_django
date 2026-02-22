@@ -11,4 +11,4 @@ jobs:
     
     steps:
       - name: Print message
-        run: echo "🚀 Code was pushed or a pull request was created! by $userName"
+        run: echo "🚀 Code was pushed or a pull request was created! by $userName fro the organisation ${{vars.ORGANISATION_ID}}"
