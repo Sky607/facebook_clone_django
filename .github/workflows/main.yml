@@ -3,11 +3,12 @@ name: Test Workflow
 on:
   push:
   pull_request:
-
+env:
+  userName: shashi
 jobs:
   test-job:
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Print message
-        run: echo "🚀 Code was pushed or a pull request was created!"
+        run: echo "🚀 Code was pushed or a pull request was created! by $userName"
