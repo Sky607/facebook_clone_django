@@ -47,4 +47,4 @@ After creating your username and password from the above code in your  cmd resta
 ```sh 
 python manage.py runserver
 ```
-In your browser under the url section type http://127.0.0.1:8000/admin and press enter, your admin page ask you for username and password enter which your created in your cmd before.Now you can access your admin panel from where you can see all the details.
+In your browser under the url section type http://127.0.0.1:8000/admin and press enter, your admin page ask you for username and password enter which your created in your cmd before.Now you can access your admin panel from where you can see all the detail.
