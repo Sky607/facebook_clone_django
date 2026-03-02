@@ -12,3 +12,6 @@ jobs:
     steps:
       - name: Print message
         run: echo "🚀 Code was pushed or a pull request was created! by $userName fro the organisation ${{vars.ORGANISATION_ID}}.I am trying to clone ${{github.repository}} repo with ${{github.repository}} by ${{github.action}}"
+
+      - name: secret message
+        run: echo "my secrets is ${{secrets.MY_key}}"
