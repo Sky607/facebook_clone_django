@@ -3,7 +3,9 @@ name: Test Workflow
 
 on:
   push:
-  pull_request:
+    branches:
+      - main
+  
 env:
   userName: shashi
 jobs:
