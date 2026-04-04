@@ -1,10 +1,10 @@
-# facebook_clone_django
+# DJANGO FACEBOOK CLONE
 
 ## Documentation
 
 ## Introduction
 
-This projects  is developed with the latest version of python and its framework Django of latest version. To run this project first install all the pacakages mention in the requirement.txt under this  project
+This projects  is developed with the latest version of python and its is using  Django of latest version. To run this project first install all the pacakages mention in the requirement.txt under this  project
 
 ## Installation
 To load the above project from github run the following command in your cmd
