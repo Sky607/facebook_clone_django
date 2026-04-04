@@ -1,6 +1,6 @@
 # DJANGO FACEBOOK CLONE
 
-## Documentations
+## Documentation
 
 ## Introduction
 
