@@ -1,4 +1,4 @@
-name: Auto PR: Dev → Main
+name: Auto PR Dev  Main
 
 on:
   push:
