@@ -10,8 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Create Pull Request
-        uses: sky607/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v6
+        
         with:
           token: ${{ secrets.SIGNING_TOKEN }}
           base: main
