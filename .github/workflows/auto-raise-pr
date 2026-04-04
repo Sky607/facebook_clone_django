@@ -13,7 +13,7 @@ jobs:
       - name: Create Pull Request
         uses: sky607/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SIGNING_TOKEN }}
           base: main
           head: dev
           title: "Auto PR: Dev → Main"
