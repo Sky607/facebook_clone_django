@@ -11,12 +11,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
-          branch: dev
-          title: "🚀 Auto PR: Dev → Main"
-          body: "This PR is automatically created from dev branch."
+          fetch-depth: 0
+
+      - name: Create Pull Request via GH CLI
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr create \
+            --base main \
+            --head dev \
+            --title "🚀 Auto PR: Dev → Main" \
+            --body "This PR is automatically created from dev branch." \
+          || echo "PR already exists or nothing to merge."
