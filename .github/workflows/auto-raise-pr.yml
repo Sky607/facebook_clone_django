@@ -1,4 +1,4 @@
-name: Auto PR from Dev to Main
+name: Auto PR: Dev → Main
 
 on:
   push:
@@ -6,19 +6,17 @@ on:
       - dev
 
 jobs:
-  create-pull-request:
+  create-pr:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
-        
         with:
-          token: ${{ secrets.SIGNING_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           base: main
-          head: dev
-          title: "Auto PR: Dev → Main"
+          branch: dev
+          title: "🚀 Auto PR: Dev → Main"
           body: "This PR is automatically created from dev branch."
