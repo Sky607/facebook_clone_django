@@ -1,4 +1,4 @@
-# facebook_clone_django
+# DJANGO FACEBOOK CLONE
 
 ## Documentation
 
